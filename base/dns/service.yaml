@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dns
+spec:
+  type: LoadBalancer
+  selector:
+    app: dns
+  ports:
+    - protocol: UDP
+      name: dns
+      port: 53
+    - protocol: TCP
+      name: dnsu
+      port: 53

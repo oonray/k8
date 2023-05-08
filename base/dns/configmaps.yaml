@@ -1,0 +1,21 @@
+kind: ConfigMap
+metadata:
+  name: coredns-config
+apiVersion: v1
+data:
+  Corefile: |-
+    .:53 {
+      prometheus
+      errors
+      file /Zone.db in.cluster.local
+      forward in.cluster.local 10.43.0.10
+      forward . 8.8.8.8
+    }
+
+  Zone.db: |-
+    $ORIGIN in.cluster.local.
+    @	3600 IN	SOA sns.dns.icann.org. noc.dns.icann.org. 2017042745 7200 3600 1209600 3600
+      3600 IN NS 127.0.0.1.
+      3600 IN NS 127.0.0.1.
+
+    *     IN A     127.0.0.1
