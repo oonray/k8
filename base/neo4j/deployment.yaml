@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neo4j
+  labels:
+    app: neo4j
+spec:
+  selector:
+    matchLabels:
+      app: neo4j
+  template:
+    metadata:
+      labels:
+        app: neo4j
+    spec:
+      volumes:
+        - name: data
+          hostPath:
+            path: /disk1/neo4j
+            type: DirectoryOrCreate
+      containers:
+      - name: neo4j
+        image: neo4j
+        ports:
+          - containerPort: 7474
+          - containerPort: 3000
+          - containerPort: 7687
+
+        volumeMounts:
+          - mountPath: /data
+            name: data

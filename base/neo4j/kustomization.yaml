@@ -1,0 +1,5 @@
+namespace: neo4j
+resources:
+- namespace.yaml
+- deployment.yaml
+- service.yaml
