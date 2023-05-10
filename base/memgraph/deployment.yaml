@@ -20,7 +20,7 @@ spec:
             type: DirectoryOrCreate
       containers:
       - name: memgraph
-        image: memgraph/memgraph:latest
+        image: memgraph/memgraph-platform:latest
         ports:
           - containerPort: 7474
           - containerPort: 3000
