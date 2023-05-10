@@ -1,2 +1,3 @@
 resources:
 - ../../base/memgraph
+- secret.enc.json

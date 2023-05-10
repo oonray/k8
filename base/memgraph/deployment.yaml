@@ -21,10 +21,17 @@ spec:
       containers:
       - name: memgraph
         image: memgraph/memgraph-platform:latest
+        env:
+          - name: MGCONSOLE
+            valueFrom:
+              secretKeyRef:
+                name: user-config
+                key: MGCONSOLE
         ports:
           - containerPort: 7474
           - containerPort: 3000
           - containerPort: 7687
+
         volumeMounts:
           - mountPath: /var/lib/memgraph/
             name: data
