@@ -17,6 +17,7 @@ spec:
         - name: data
           hostPath:
             path: /disk1/memgraph
+            type: DirectoryOrCreate
       containers:
       - name: memgraph
         image: memgraph/memgraph:latest
