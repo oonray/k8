@@ -21,12 +21,6 @@ spec:
       containers:
       - name: memgraph
         image: memgraph/memgraph-platform:latest
-        env:
-          - name: MGCONSOLE
-            valueFrom:
-              secretKeyRef:
-                name: user-config
-                key: MGCONSOLE
         ports:
           - containerPort: 7474
           - containerPort: 3000
