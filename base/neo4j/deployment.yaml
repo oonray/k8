@@ -18,7 +18,6 @@ spec:
           hostPath:
             path: /disk1/neo4j
             type: DirectoryOrCreate
-      volumes:
         - name: neo4j-conf
           configMap:
             name: neo4j-conf
