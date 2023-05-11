@@ -1,5 +1,4 @@
 resources:
-- ../../base/neo4j/namespace.yaml #db namespace
 - ../../base/neo4j
 - ../../base/mongo
 - secrets.mongo.enc.json
