@@ -1,2 +1,4 @@
 resources:
 - ../../base/neo4j
+- ../../base/mongo
+- secrets.mongo.enc.json
