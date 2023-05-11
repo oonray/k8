@@ -18,6 +18,13 @@ spec:
           hostPath:
             path: /disk1/neo4j
             type: DirectoryOrCreate
+      volumes:
+        - name: neo4j-conf
+          configMap:
+            name: neo4j-conf
+            items:
+              - key: neo4j.conf
+                path: neo4j.conf
       containers:
       - name: neo4j
         image: neo4j
@@ -29,3 +36,6 @@ spec:
         volumeMounts:
           - mountPath: /data
             name: data
+          - name: neo4j-conf
+            path: /var/lib/neo4j/conf/neo4j.conf
+            subPath: neo4j.conf

@@ -1,6 +1,6 @@
 kind: namespace
 apiVersion: v1
 metadata:
-  name: mongo
+  name: vectr
   labels:
-    name: mongo
+    name: vectr

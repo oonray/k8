@@ -1,4 +1,4 @@
-namespace: dbs
+namespace: vectr
 resources:
   - namespace.yaml
   - deployment.yaml

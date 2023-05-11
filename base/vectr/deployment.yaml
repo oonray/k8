@@ -1,36 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo
+  name: vectr
   labels:
-    app: mongo
+    app: vectr
 spec:
   selector:
     matchLabels:
-      app: mongo
+      app: vectr
   template:
     metadata:
       labels:
-        app: mongo
+        app: vectr
     spec:
       volumes:
         - name: data
           hostPath:
-            path: /disk1/mongo
+            path: /disk1/vectr
             type: DirectoryOrCreate
       containers:
-      - name: mongo
-        image: mongo
+      - name: vectr
+        image: securityriskadvisors/vectr_tomcat:8.8.0
         ports:
-          - containerPort: 27020
-        env:
-          - name: MONGO_INITDB_ROOT_USERNAME
-            value: root
-          - name: MONGO_INITDB_ROOT_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: mongo-pass
-                key: passwd
+          - containerPort: 8081
         volumeMounts:
           - mountPath: /data/db
             name: data
