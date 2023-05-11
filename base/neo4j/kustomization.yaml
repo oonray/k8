@@ -1,5 +1,4 @@
-namespace: neo4j
+namespace: dbs
 resources:
-- namespace.yaml
 - deployment.yaml
 - service.yaml

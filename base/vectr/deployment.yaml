@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo
+  labels:
+    app: mongo
+spec:
+  selector:
+    matchLabels:
+      app: mongo
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      volumes:
+        - name: data
+          hostPath:
+            path: /disk1/mongo
+            type: DirectoryOrCreate
+      containers:
+      - name: mongo
+        image: mongo
+        ports:
+          - containerPort: 27020
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            value: root
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongo-pass
+                key: passwd
+        volumeMounts:
+          - mountPath: /data/db
+            name: data

@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: neo4j
+  name: dbs
   labels:
-    name: neo4j
+    name: dbs

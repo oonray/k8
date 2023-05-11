@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: memgraph
+  name: dbs
   labels:
-    name: memgraph
+    name: dbs

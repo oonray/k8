@@ -1,5 +1,4 @@
-namespace: memgraph
+namespace: dbs
 resources:
-- namespace.yaml
 - deployment.yaml
 - service.yaml

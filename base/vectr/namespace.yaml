@@ -1,6 +1,6 @@
 kind: namespace
 apiVersion: v1
 metadata:
-  name: dbs
+  name: mongo
   labels:
-    name: dbs
+    name: mongo
