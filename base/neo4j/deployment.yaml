@@ -35,7 +35,6 @@ spec:
         volumeMounts:
           - mountPath: /data
             name: data
-
-          - name: neo4j-conf
-            mountPath: /etc/neo4j/neo4j.conf
-            subPath: neo4j.conf
+#          - name: neo4j-conf
+#            mountPath: /etc/neo4j/neo4j.conf
+#            subPath: neo4j.conf
