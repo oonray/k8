@@ -14,7 +14,6 @@ spec:
       labels:
         app: haskell
     spec:
-      serviceAccount: haskell
       volumes:
           - name: haskell
             hostPath:
