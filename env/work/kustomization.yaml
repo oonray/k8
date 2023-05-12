@@ -2,6 +2,5 @@ resources:
 - ../../base/neo4j
 - ../../base/mongo
 - ../../base/postgres
-- ../../base/jupyter/haskell
 - secrets.mongo.enc.json
 - secrets.postgres.enc.json
