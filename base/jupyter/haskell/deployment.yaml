@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: haskell
+  labels:
+    app: haskell
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: haskell
+  template:
+    metadata:
+      labels:
+        app: haskell
+    spec:
+      serviceAccount: haskell
+      volumes:
+          - name: haskell
+            hostPath:
+              path: /disk1/jupyter/haskell
+              type: DirectoryOrCreate
+      containers:
+      - name: haskell
+        securityContext:
+          privileged: true
+        image: crosscompass/haskell-notebook
+        volumeMounts:
+          - mountPath: /home/jovyan/pwd
+            name: haskell
+        ports:
+          - containerPort: 8888
