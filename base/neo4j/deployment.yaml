@@ -37,5 +37,5 @@ spec:
             name: data
 
           - name: neo4j-conf
-            mountPath: /var/lib/neo4j/conf/neo4j.conf
+            mountPath: /etc/neo4j/neo4j.conf
             subPath: neo4j.conf
