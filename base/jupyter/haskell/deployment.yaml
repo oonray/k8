@@ -22,8 +22,6 @@ spec:
               type: DirectoryOrCreate
       containers:
       - name: haskell
-        securityContext:
-          privileged: true
         image: crosscompass/haskell-notebook
         volumeMounts:
           - mountPath: /home/jovyan/pwd

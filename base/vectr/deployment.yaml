@@ -16,13 +16,22 @@ spec:
       volumes:
         - name: data
           hostPath:
-            path: /disk1/vectr
+            path: /disk1/vectr/data
+            type: DirectoryOrCreate
+        - name: redis
+          hostPath:
+            path: /disk1/vectr/redis
             type: DirectoryOrCreate
       containers:
-      - name: vectr
+      - name: vectr-tomcat
         image: securityriskadvisors/vectr_tomcat:8.8.0
         ports:
           - containerPort: 8081
         volumeMounts:
           - mountPath: /data/db
             name: data
+      - name: vectr-redis
+        image: redis:6.2-bullseye
+        volumeMounts:
+          - mountPath: /data
+            name: redis
