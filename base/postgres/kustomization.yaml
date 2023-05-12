@@ -1,0 +1,4 @@
+namespace: dbs
+resources:
+  - deployment.yaml
+  - service.yaml
