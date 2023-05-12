@@ -8,6 +8,7 @@ data:
     server.bolt.enabled=true
     server.http.enabled=true
     server.https.enabled=false
+    server.config.strict_validation.enabled = false
 
     # Bolt SSL configuration
     #dbms.ssl.policy.bolt.enabled=true
