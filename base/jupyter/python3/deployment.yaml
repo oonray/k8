@@ -21,7 +21,7 @@ spec:
               type: DirectoryOrCreate
       containers:
       - name: python
-        image: jupyter/datascience-notebook i
+        image: jupyter/datascience-notebook
         volumeMounts:
           - mountPath: /home/jovyan/work
             name: python
