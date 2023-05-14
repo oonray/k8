@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python
+  labels:
+    app: python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      volumes:
+          - name: python
+            hostPath:
+              path: /disk1/jupyter/python
+              type: DirectoryOrCreate
+      containers:
+      - name: python
+        image: jupyter/datascience-notebook i
+        volumeMounts:
+          - mountPath: /home/jovyan/work
+            name: python
+        ports:
+          - containerPort: 8888
