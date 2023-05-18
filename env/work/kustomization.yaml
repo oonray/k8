@@ -3,5 +3,6 @@ resources:
 - ../../base/mongo
 - ../../base/postgres
 - ../../base/jupyter/python3
+- redeye
 - secrets.mongo.enc.json
 - secrets.postgres.enc.json
