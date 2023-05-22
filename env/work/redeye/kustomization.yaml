@@ -6,7 +6,7 @@ replicas:
   - name: redeye
     count: 1
 resources:
-  - ssh://git@github.com/oonray/HackTheBox.git/base/default
+  - ssh://git@github.com/oonray/HackTheBox.git/base/redeye
   - secrets.enc.json
 patches:
   - path: deployment.yaml
